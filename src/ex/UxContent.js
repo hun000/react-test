@@ -65,20 +65,20 @@ class UxContent extends Component {
         //검색 추가
         if (jsonData.length !== 0) { 
             for(let i=start; i<=end; i++) {                
-                let seahchValue;
+                let seachValue;
                 switch(selectValue) {
                     case 'name':
-                        seahchValue = jsonData[i].name;
+                        seachValue = jsonData[i].name;
                         break;
                     case 'email':
-                        seahchValue = jsonData[i].email;
+                        seachValue = jsonData[i].email;
                         break;
                     default:
-                        seahchValue = jsonData[i].body;
+                        seachValue = jsonData[i].body;
                         break;
                 }
                 
-                if(seahchValue.indexOf(filterText) === -1) continue;
+                if(seachValue.indexOf(filterText) === -1) continue;
                 rows.push(<LinkData key={jsonData[i].id} jsonData={jsonData[i]} />);
             }
         }        
@@ -93,7 +93,7 @@ class UxContent extends Component {
                 <table className="tb-mg">
                     <thead>
                         <tr>
-                            <th>no</th>
+                            <th>No</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Body</th>

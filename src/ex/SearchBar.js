@@ -11,8 +11,7 @@ class SearchBar extends Component {
        this.props.onFilterChange(e.target.value);
     }
 
-    handleSelectChange(e) {
-        console.log(e.target.value);
+    handleSelectChange(e) {        
         this.props.onSelectChange(e.target.value);
     }
 
