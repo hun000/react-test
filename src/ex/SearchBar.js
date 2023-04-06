@@ -17,7 +17,7 @@ class SearchBar extends Component {
     }
 
     render() {
-        const options = ['name', 'email'];
+        const options = ['name', 'email', 'body'];
         return (
             <div>
                 <p className="tit">React JSON Data Test</p>                    

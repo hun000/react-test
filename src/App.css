@@ -1,6 +1,12 @@
 table, th, td, tr {
   border: 1px solid #000000;  border-collapse: collapse;
 }
+select {
+  width: 80px;
+}
+input {
+  width: 200px;
+}
 .tb-mg {
   margin: 20px;
 }
@@ -11,7 +17,7 @@ table, th, td, tr {
   margin: 0 0 0 20px;
 }
 .in {
-  margin: 0 0 0 20px;
+  margin: 0 8px 0 20px;
 }
 .tit {
   text-align: center;  font: 13px;  font-weight: bold;

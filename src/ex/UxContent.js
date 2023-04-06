@@ -45,11 +45,9 @@ class UxContent extends Component {
         this.setState({filterText: filterText});
     }    
 
-    handleSelectChange(selectValue){
-        console.log(`sv::: ${selectValue}`);
+    handleSelectChange(selectValue) {        
         this.setState({selectValue: selectValue});
-    }
-    
+    }    
 
     render() {
         const jsonData = this.state.jsonData;        
@@ -66,8 +64,20 @@ class UxContent extends Component {
                 
         //검색 추가
         if (jsonData.length !== 0) { 
-            for(let i=start; i<=end; i++) {
-                const seahchValue = selectValue !== "name" ? jsonData[i].email : jsonData[i].name;
+            for(let i=start; i<=end; i++) {                
+                let seahchValue;
+                switch(selectValue) {
+                    case 'name':
+                        seahchValue = jsonData[i].name;
+                        break;
+                    case 'email':
+                        seahchValue = jsonData[i].email;
+                        break;
+                    default:
+                        seahchValue = jsonData[i].body;
+                        break;
+                }
+                
                 if(seahchValue.indexOf(filterText) === -1) continue;
                 rows.push(<LinkData key={jsonData[i].id} jsonData={jsonData[i]} />);
             }
